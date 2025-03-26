@@ -1,0 +1,175 @@
+<div class="ds page-width">
+  <h2>{{ section.settings.heading0124 }}</h2>
+  <div class="iuohfg">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.collurl }}" style="background-color:{{ block.settings.bgcolor }};">
+        <div class="ujddio">
+          <img src="{{ block.settings.imag | img_url:'master' }}">
+         <h2> {{ block.settings.title }}</h2>
+          <p> {{ block.settings.title1 }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .ds a:hover {
+    border: 1px solid #9fa315;
+    box-shadow: .5rem .5rem 1.5rem #0000000d!important;
+}
+.iuohfg {
+    display: flex;
+}
+.ujddio img {
+    width: 101%;
+}
+.iuohfg a {
+    margin: 13px;
+    
+}
+.iuohfg a {
+    margin: 13px;
+    
+    overflow: hidden;
+}
+.ujddio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ujddio img {
+    width: 97%;
+    height: 195px;
+    padding: 14px;
+}
+.iuohfg a {
+    width: 10%;
+}
+.iuohfg a {
+    width: 17%;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 14px;
+    color: black;
+    padding-bottom: 8px;
+}
+  .ds h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #040404 !important;
+    text-transform: capitalize;
+}
+
+.ujddio h2 {
+    font-size: 16px;
+    margin-bottom: -11px;
+    font-weight: 700;
+    text-align: center;
+    color: #015E5F!important;
+    text-transform: capitalize;
+    margin-top: 0;
+}
+   @media only screen and (max-width: 767px) {
+
+.iuohfg {
+    display: flex;
+    flex-wrap: wrap;
+}
+     
+     .iuohfg a {
+    width: 42% !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 14px;
+    color: black;
+    padding-bottom: 8px;
+}
+     
+   }
+
+  @media only screen and (min-resolution: 132dpi) and (max-device-width: 1024px) and (orientation : portrait) {
+.iuohfg {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iuohfg a {
+    width: 16%;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 12px;
+    color: black;
+    padding-bottom: 8px;
+}
+}
+  
+</style>
+
+{% schema %}
+{
+  "name": "image box",
+  "settings": [
+    {
+      "type": "color",
+      "label": "Text color",
+      "id": "textcolor"
+    },
+    {
+      "type": "text",
+      "label": "Text Size",
+      "id": "textsize"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading0124"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Add menu block",
+      "settings": [
+        {
+          "type": "color",
+          "label": "Background color",
+          "id": "bgcolor"
+        },
+        {
+          "type": "image_picker",
+          "label": "Add menu icon",
+          "id": "imag"
+        },
+        {
+          "type": "text",
+          "label": "Title text",
+          "id": "title"
+        },
+        {
+          "type": "textarea",
+          "label": "text",
+          "id": "title1"
+        },
+     {
+      "type": "url",
+      "label": "Collection url",
+      "id": "collurl"
+    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "image box"
+    }
+  ]
+}
+{% endschema %}
+ 
